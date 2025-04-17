@@ -1,7 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart } from "recharts"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 const data = [
   { name: "Immobilier", conversion: 7.8, cpl: 1.85 },
@@ -16,6 +17,8 @@ const data = [
 
 export function NichePerformanceChart() {
   const [isMounted, setIsMounted] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const isMobile = useMediaQuery("(max-width: 768px)")
 
   useEffect(() => {
     setIsMounted(true)
@@ -26,35 +29,72 @@ export function NichePerformanceChart() {
   }
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-        <XAxis dataKey="name" className="text-xs" />
-        <YAxis yAxisId="left" orientation="left" className="text-xs" />
-        <YAxis yAxisId="right" orientation="right" domain={[0, 6]} className="text-xs" />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: "hsl(var(--background))",
-            borderColor: "hsl(var(--border))",
-            borderRadius: "var(--radius)",
+    <div ref={containerRef} className="w-full h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={data}
+          margin={{
+            top: 20,
+            right: isMobile ? 10 : 30,
+            bottom: isMobile ? 10 : 5,
+            left: isMobile ? 0 : 20,
           }}
-        />
-        <Legend />
-        <Bar
-          yAxisId="left"
-          dataKey="conversion"
-          name="Taux de conversion (%)"
-          fill="hsl(var(--primary))"
-          radius={[4, 4, 0, 0]}
-        />
-        <Bar
-          yAxisId="right"
-          dataKey="cpl"
-          name="Coût par lead (€)"
-          fill="hsl(var(--destructive))"
-          radius={[4, 4, 0, 0]}
-        />
-      </BarChart>
-    </ResponsiveContainer>
+        >
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis
+            dataKey="name"
+            className="text-xs"
+            tick={{ fontSize: isMobile ? 10 : 12 }}
+            tickMargin={isMobile ? 5 : 10}
+            interval={0}
+            angle={isMobile ? -45 : 0}
+            textAnchor={isMobile ? "end" : "middle"}
+            height={isMobile ? 60 : 30}
+          />
+          <YAxis
+            yAxisId="left"
+            orientation="left"
+            className="text-xs"
+            tick={{ fontSize: isMobile ? 10 : 12 }}
+            tickMargin={isMobile ? 5 : 10}
+            width={isMobile ? 30 : 40}
+          />
+          <YAxis
+            yAxisId="right"
+            orientation="right"
+            domain={[0, 6]}
+            className="text-xs"
+            tick={{ fontSize: isMobile ? 10 : 12 }}
+            tickMargin={isMobile ? 5 : 10}
+            width={isMobile ? 30 : 40}
+          />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: "hsl(var(--background))",
+              borderColor: "hsl(var(--border))",
+              borderRadius: "var(--radius)",
+              fontSize: isMobile ? 10 : 12,
+            }}
+          />
+          <Legend wrapperStyle={{ fontSize: isMobile ? 10 : 12 }} iconSize={isMobile ? 8 : 10} />
+          <Bar
+            yAxisId="left"
+            dataKey="conversion"
+            name="Taux de conversion (%)"
+            fill="hsl(var(--primary))"
+            radius={[4, 4, 0, 0]}
+            barSize={isMobile ? 15 : 20}
+          />
+          <Bar
+            yAxisId="right"
+            dataKey="cpl"
+            name="Coût par lead (€)"
+            fill="hsl(var(--destructive))"
+            radius={[4, 4, 0, 0]}
+            barSize={isMobile ? 15 : 20}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   )
 }

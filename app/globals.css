@@ -53,10 +53,54 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground font-lato;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Styles pour les graphiques Recharts */
+.recharts-wrapper {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.recharts-responsive-container {
+  width: 100% !important;
+}
+
+/* Styles pour les tableaux */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td,
+th {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Styles pour les cartes et conteneurs */
+.card {
+  width: 100%;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .recharts-text {
+    font-size: 10px;
+  }
+
+  .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+
+  .recharts-legend-item-text {
+    font-size: 10px;
   }
 }
 

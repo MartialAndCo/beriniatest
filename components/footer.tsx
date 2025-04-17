@@ -1,4 +1,4 @@
-import Link from "next/link"
+import ScrollToTopLink from "./scroll-to-top-link"
 import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
 
 export default function Footer() {
@@ -7,49 +7,49 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
+            <ScrollToTopLink href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-blue-500"></div>
               <span className="text-xl font-bold">BerinIA</span>
-            </Link>
+            </ScrollToTopLink>
             <p className="text-gray-600 dark:text-gray-400">
               Transformez votre entreprise avec des solutions d'IA avancées.
             </p>
             <div className="flex space-x-4">
-              <Link
+              <ScrollToTopLink
                 href="#"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
+              </ScrollToTopLink>
+              <ScrollToTopLink
                 href="#"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
               >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
+              </ScrollToTopLink>
+              <ScrollToTopLink
                 href="#"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
-              </Link>
-              <Link
+              </ScrollToTopLink>
+              <ScrollToTopLink
                 href="#"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link
+              </ScrollToTopLink>
+              <ScrollToTopLink
                 href="#"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
               >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
-              </Link>
+              </ScrollToTopLink>
             </div>
           </div>
 
@@ -59,44 +59,44 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Chatbots IA
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Standard Téléphonique
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Automatisation
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Analyse de Données
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Intégrations
-                </Link>
+                </ScrollToTopLink>
               </li>
             </ul>
           </div>
@@ -107,44 +107,44 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Documentation
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Guides
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Blog
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Études de cas
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Webinaires
-                </Link>
+                </ScrollToTopLink>
               </li>
             </ul>
           </div>
@@ -155,44 +155,44 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="#"
+                <ScrollToTopLink
+                  href="/a-propos"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   À propos
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Carrières
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <ScrollToTopLink
+                  href="/partenaires"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Partenaires
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <ScrollToTopLink
+                  href="/contact"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Contact
-                </Link>
+                </ScrollToTopLink>
               </li>
               <li>
-                <Link
+                <ScrollToTopLink
                   href="#"
                   className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"
                 >
                   Presse
-                </Link>
+                </ScrollToTopLink>
               </li>
             </ul>
           </div>
@@ -204,24 +204,24 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} BerinIA. Tous droits réservés.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link
-                href="#"
+              <ScrollToTopLink
+                href="/conditions-utilisation"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors text-sm"
               >
                 Conditions d'utilisation
-              </Link>
-              <Link
-                href="#"
+              </ScrollToTopLink>
+              <ScrollToTopLink
+                href="/confidentialite"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors text-sm"
               >
                 Politique de confidentialité
-              </Link>
-              <Link
-                href="#"
+              </ScrollToTopLink>
+              <ScrollToTopLink
+                href="/cookies"
                 className="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors text-sm"
               >
                 Cookies
-              </Link>
+              </ScrollToTopLink>
             </div>
           </div>
         </div>

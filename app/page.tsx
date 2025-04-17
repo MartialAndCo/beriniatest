@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { ArrowRight, Bot, Headphones, Zap, MessageSquare, Phone, BarChart4, CheckCircle2, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -37,15 +36,8 @@ export default function Home() {
                     size="lg"
                     className="group bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
                   >
-                    Être recontacté
+                    Essayer gratuitement
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-purple-300 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-300"
-                  >
-                    Voir une démo
                   </Button>
                 </div>
 
@@ -148,7 +140,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-3 flex items-center">
@@ -221,6 +213,44 @@ export default function Home() {
                   <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                     <span className="font-medium text-orange-600 dark:text-orange-400">Résultat :</span>
                     <span className="ml-2">Réduction de 50% du temps de gestion administrative</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 flex items-center">
+                    <span className="w-8 h-8 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 flex items-center justify-center mr-2">
+                      5
+                    </span>
+                    Plombiers & Artisans
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Gestion des appels d'urgence et prise de rendez-vous automatisée, avec qualification des demandes et
+                    estimation des délais d'intervention.
+                  </p>
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-medium text-pink-600 dark:text-pink-400">Résultat :</span>
+                    <span className="ml-2">Réduction de 80% des appels manqués, +35% de clients satisfaits</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 flex items-center">
+                    <span className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 flex items-center justify-center mr-2">
+                      6
+                    </span>
+                    Salons de bien-être
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    Système de réservation intelligent avec recommandations personnalisées de soins et suivi client
+                    automatisé après les prestations.
+                  </p>
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-medium text-teal-600 dark:text-teal-400">Résultat :</span>
+                    <span className="ml-2">+45% de réservations additionnelles, fidélisation client améliorée</span>
                   </div>
                 </div>
               </div>
@@ -555,17 +585,9 @@ export default function Home() {
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
               Rejoignez les centaines d'entreprises qui ont déjà adopté BerinIA pour automatiser leurs processus.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button size="lg" variant="secondary" className="hover:scale-105 transition-transform duration-300">
-                Être recontacté par notre équipe
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-transparent text-white border-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <Link href="/login">Se connecter</Link>
+                Démarrer maintenant
               </Button>
             </div>
           </div>

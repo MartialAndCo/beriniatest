@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import ScrollToTop from "@/components/scroll-to-top"
 
 // Remplacer Open Sans par Lato
 import { Lato } from "next/font/google"
@@ -26,10 +27,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className={`${lato.variable} font-lato`}>
+    <html lang="fr" suppressHydrationWarning className="overflow-x-hidden">
+      <body className={`${lato.variable} font-lato overflow-x-hidden max-w-[100vw]`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
+          <ScrollToTop />
+          <div className="flex flex-col min-h-screen w-full overflow-x-hidden max-w-[100vw]">{children}</div>
         </ThemeProvider>
       </body>
     </html>

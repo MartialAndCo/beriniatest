@@ -1,3 +1,10 @@
+/**
+ * Page de connexion
+ *
+ * Cette page permet aux utilisateurs de se connecter à l'application.
+ * Elle utilise le hook useAuth pour gérer l'authentification.
+ */
+
 "use client"
 
 import type React from "react"
@@ -10,21 +17,36 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import AnimatedGradient from "@/components/animated-gradient"
+import { useAuth } from "@/hooks/useAuth"
+import { ErrorMessage } from "@/components/ui/error-message"
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [rememberMe, setRememberMe] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  // Utiliser le hook d'authentification
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
+    setError(null)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsLoading(false)
-    // In a real app, you would handle authentication here
+    try {
+      // Appeler la fonction de connexion du hook useAuth
+      await login({
+        email,
+        password,
+        rememberMe,
+      })
+      // La redirection est gérée dans le hook useAuth
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue lors de la connexion")
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -71,6 +93,8 @@ export default function LoginPage() {
               </div>
             </div>
 
+            {error && <ErrorMessage message={error} className="mb-4" onDismiss={() => setError(null)} />}
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -82,6 +106,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="transition-all duration-200 focus:ring-2 focus:ring-purple-500"
+                  disabled={isLoading}
                 />
               </div>
 
@@ -103,11 +128,17 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="transition-all duration-200 focus:ring-2 focus:ring-purple-500"
+                  disabled={isLoading}
                 />
               </div>
 
               <div className="flex items-center space-x-2">
-                <Checkbox id="remember" />
+                <Checkbox
+                  id="remember"
+                  checked={rememberMe}
+                  onCheckedChange={(checked) => setRememberMe(checked === true)}
+                  disabled={isLoading}
+                />
                 <Label
                   htmlFor="remember"
                   className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
